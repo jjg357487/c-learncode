@@ -1,5 +1,5 @@
 #include<stdio.h>
-void exchange(char* base, char* base1 ,int whith)
+void exchange(char* base, char* base1 ,int whith)//交换函数
 {
 	for (int i = 0; i < whith; i++)
 	{
@@ -11,14 +11,14 @@ void exchange(char* base, char* base1 ,int whith)
 	}
 
 }
-void bubble_sort(void* base, int n, int whith, int (*cmp)(const void*, const void*))
+void bubble_sort(void* base, int n, int whith, int (*cmp)(const void*, const void*))//快速排序，冒泡
 {
 	for (int i = 0; i < n - 1; i++)
 	{
 		for (int j = 0; j < n - 1 - i; j++)
 		{
-			if ((*cmp)((char*)base + j * whith, (char*)base + (j+1) * whith) > 0)
-				exchange((char*)base + j * whith, (char*)base + (1 + j) * whith, whith);
+			if ((*cmp)((char*)base + j * whith, (char*)base + (j+1) * whith) > 0)//如果前面的数大于后面的数
+				exchange((char*)base + j * whith, (char*)base + (1 + j) * whith, whith);//交换
 		}
 	}
 }
